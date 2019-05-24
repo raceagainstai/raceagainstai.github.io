@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Financial/Technology Path</title>
+  <link rel="stylesheet" href="../videoStyle.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js'></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+
+
+</head>
+
+<body>
+  <!-- background gradient -->
+  <div class="back"><p>.</p></div>
+
+  <!-- text and animation container -->
+  <div class="banner-container">
+    <div class="perlin-video">
+      <script src="../perlin-video.js"></script>
+    </div>
+    <div class="banner">
+      <div class="surveyTitle">
+  <!-- Each time user moves onto a new question, the AI's dialogue changes to reflect the question -->
+        <h2 class="aiText" id="aiVideoTitle">Here's what your world looks like in 2029, told through these two narratives.</h2>
+      </div>
+      <div class="surveyTitle"id="stretcher"><p>__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p> </div>
+    </div>
+  </div>
+
+  <!-- survey section -->
+  <div class="videoContainer" id="Flood_Cyber">
+    <iframe src="https://player.vimeo.com/video/337686511" width="1920" height="720"  align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen>
+    </iframe>
+  </div>
+  <div class="banner-container">
+    <div class="footer">
+        <p class="aiText" id="aiVideoSubtitle"><a href="../gallery.html"> Gallery of All Stories</a></p>
+        <p class="aiText" id="aiVideoSubtitle"><a href="../feedback.html"> Share your thoughts </a></p>
+    </div>
+  </div>
+
+
+    <script src="dialogue.js"></script>
+    <!-- Script to calculate total counter -->
+    <script src="score.js"></script>
+
+
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Race Against the AI</title>
+  <link rel="stylesheet" href="css/style1.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js'></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+
+
+</head>
+
+<body>
+  <!-- background gradient -->
+  <div class="back"><p>.</p></div>
+
+  <!-- text and animation container -->
+  <div class="banner-container">
+    <div class="perlin-small">
+      <script src="js/perlin-small.js"></script>
+    </div>
+    <div class="banner">
+      <div class="surveyTitle">
+  <!-- Each time user moves onto a new question, the AI's dialogue changes to reflect the question -->
+        <h2 class="aiText" id="aiName">Ok, Let's start with the basics. What should I call you?</h2>
+        <h2 class="aiText" id="aiAge"></h2>
+        <h2 class="aiText" id="aiMarriage"></h2>
+        <h2 class="aiText" id="aiChildren"></h2>
+        <h2 class="aiText" id="aiIndustries"></h2>
+        <h2 class="aiText" id="aiRoles"></h2>
+        <h2 class="aiText" id="aiSociety"></h2>
+        <h2 class="aiText" id="aiAffect"></h2>
+        <h2 class="aiText" id="aiTrust"></h2>
+        <h2 class="aiText" id="aiInterest"></h2>
+
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- survey section -->
+  <div class="survey">
+    <div><p class="top-gradient">.</p></div>
+    <form id="quiz" name="quiz">
+      <p class="name">Hi, my name is <input type="text" class="name" id="userName" size="6" maxlength="25" placeholder="Jane Doe" onkeypress="this.style.width=((this.value.length + 1) * 2) + 'vw';">&nbsp;.</p>
+<!-- AI will change dialogue and call user by their name (Hi there, Jane Doe) -->
+      <p class="age">I'm <input type="number" class="age" id="userAge" size="4" placeholder="42" min="0" max="70" onkeypress="this.style.width = ((this.value.length + 3) * 1.5) + 'vw';"> years old.</p>
+<!-- AI comments on their age being young -->
+      <p style="font-size:2.5vh; color:#999;" id="warning"> Below are questions with drop-down selections. To confirm your choice, just click anywhere outside the dropdown menu.</p>
+      <p class="marriage">I'm
+<!-- QUESTION 1 -->
+        <script>
+        //adjusts each "option" tag width to the width of the containing text length.
+        $(document).ready(function() {
+         $('#marriage').change(function(){
+            $("#hidden-option").html($('#marriage option:selected').text());
+            $(this).width($("#hidden-select").width());
+         });
+        });
+        </script>
+        <select id="hidden-select"><option id="hidden-option"></option></select>
+        <select class="question" id="marriage" required>
+          <option value="1">in a relationship&nbsp;&nbsp;&nbsp;</option>
+          <option value="2">married&nbsp;&nbsp;&nbsp;</option>
+          <option value="3">unmarried&nbsp;&nbsp;&nbsp;</option>
+        </select> with
+<!-- QUESTION 2 -->
+        <select class="question" id="children" required>
+          <option value="0">no kids.&nbsp;&nbsp;&nbsp;</option>
+          <option value="2">1 child.&nbsp;&nbsp;&nbsp;</option>
+          <option value="4">2 children.&nbsp;&nbsp;&nbsp;</option>
+          <option value="6">3 children.&nbsp;&nbsp;&nbsp;</option>
+          <option value="8">a lot of kids.&nbsp;&nbsp;&nbsp;</option>
+        </select>
+      </p>
+<!-- QUESTION 3 -->
+      <p class="industries"> I hold a
+        <script>
+        $(document).ready(function() {
+          $('#roles').change(function(){
+            $("#hidden-option").html($('#roles option:selected').text());
+            $(this).width($("#hidden-select").width());
+          });
+        });
+        </script>
+        <select id="hidden-select"><option id="hidden-option"></option></select>
+        <select class="weight" id="roles" onchange="this.className='blueText'"required>
+          <!-- <option value="role">-role type-</option> -->
+          <option value="0">-role type-&nbsp;&nbsp;&nbsp;</option>
+          <option value="2">physical laborer&nbsp;&nbsp;&nbsp;</option>
+          <option value="4">non-managerial&nbsp;&nbsp;&nbsp;</option>
+          <option value="6">admin/manager&nbsp;&nbsp;&nbsp;</option>
+          <option value="8">teacher&nbsp;&nbsp;&nbsp;</option>
+        </select> role in the
+<!-- QUESTION 4 -->
+      <script>
+      $(document).ready(function() {
+       $('#industries').change(function(){
+          $("#hidden-option").html($('#industries option:selected').text());
+          $(this).width($("#hidden-select").width());
+       });
+      });
+      </script>
+      <select id="hidden-select"><option id="hidden-option"></option></select>
+      <select class="weight" id="industries" onchange="this.className='blueText'"required>
+        <option value="0">-industry-&nbsp;&nbsp;&nbsp;</option>
+        <option value="2">transportation&nbsp;&nbsp;&nbsp;</option>
+        <option value="4">manufacturing&nbsp;&nbsp;&nbsp;</option>
+        <option value="6">retail&nbsp;&nbsp;&nbsp;</option>
+        <option value="8">service&nbsp;&nbsp;&nbsp;</option>
+        <option value="10">construction&nbsp;&nbsp;&nbsp;</option>
+        <option value="12">financial&nbsp;&nbsp;&nbsp;</option>
+        <option value="14">technology&nbsp;&nbsp;&nbsp;</option>
+        <option value="16">education&nbsp;&nbsp;&nbsp;</option>
+      </select> industry.</p>
+
+<!-- QUESTION 5 -->
+      <p class="society">I'm inclined to believe that AI and automation
+        <script>
+        $(document).ready(function() {
+         $('#society').change(function(){
+            $("#hidden-option").html($('#society option:selected').text());
+            $(this).width($("#hidden-select").width());
+         });
+        });
+        </script>
+        <select id="hidden-select"><option id="hidden-option"></option></select>
+        <select class="question" id="society" onchange="this.className='blueText'"required>
+          <option value="0">-select-&nbsp;&nbsp;&nbsp;</option>
+          <option value="2">benefits&nbsp;&nbsp;&nbsp;</option>
+          <option value="4">harms&nbsp;&nbsp;&nbsp;</option>
+        </select> society.</p>
+
+<!-- QUESTION 6 -->
+      <p class="affect">The role of automation has affected me
+        <script>
+        $(document).ready(function() {
+         $('#affect').change(function(){
+            $("#hidden-option").html($('#affect option:selected').text());
+            $(this).width($("#hidden-select").width());
+         });
+        });
+        </script>
+        <select id="hidden-select"><option id="hidden-option"></option></select>
+        <select class="question" id="affect" onchange="this.className='blueText'"required>
+          <option value="0">-select-.&nbsp;&nbsp;&nbsp;</option>
+          <option value="2">neutrally.&nbsp;&nbsp;&nbsp;</option>
+          <option value="4">positively.&nbsp;&nbsp;&nbsp;</option>
+          <option value="6">negatively.&nbsp;&nbsp;&nbsp;</option>
+        </select></p>
+<!-- QUESTION 7 -->
+        <p class="trust">And if my job is going to be automated, I mostly trust
+          <script>
+          $(document).ready(function() {
+           $('#trust').change(function(){
+              $("#hidden-option").html($('#trust option:selected').text());
+              $(this).width($("#hidden-select").width());
+           });
+          });
+          </script>
+          <select id="hidden-select"><option id="hidden-option"></option></select>
+          <select class="question" id="trust" onchange="this.className='blueText'"required>
+            <option value="0">-select-&nbsp;&nbsp;&nbsp;</option>
+            <option value="2"> my own competence&nbsp;&nbsp;&nbsp;</option>
+            <option value="4"> my employer&nbsp;&nbsp;&nbsp;</option>
+            <option value="6"> the government&nbsp;&nbsp;&nbsp;</option>
+          </select> to help me retrain for another role.</p>
+
+<!-- QUESTION 8 -->
+<!-- After selecting an option, the form completes, leads user to the video. -->
+      <p class="interest">I get riled up when it comes to
+        <script>
+        $(document).ready(function() {
+         $('#interest').change(function(){
+            $("#hidden-option").html($('#interest option:selected').text());
+            $(this).width($("#hidden-select").width());
+         });
+        });
+        </script>
+        <select id="hidden-select"><option id="hidden-option"></option></select>
+        <select class="weight" id="interest" onchange="this.className='blueText'" required>
+          <!-- <option value="role">-role type-</option> -->
+          <option value="2"> environmental issues &nbsp;&nbsp;&nbsp;</option>
+          <option value="4"> data privacy &nbsp;&nbsp;&nbsp;</option>
+          <option value="6"> technicalities of technology &nbsp;&nbsp;&nbsp;</option>
+        </select>.</p>
+    <div class="bttn">
+    <button id="nextPage">Show Me</button>
+    </div>
+    <script src="js/dialogueScript.js"></script>
+    <!-- Script to calculate total counter -->
+    <script src="js/score.js"></script>
+
+
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

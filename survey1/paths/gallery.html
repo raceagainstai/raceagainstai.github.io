@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Story Gallery</title>
+  <link rel="stylesheet" href="galleryStyle.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js'></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"/>
+
+
+</head>
+
+<body>
+  <!-- background gradient -->
+  <div class="back"><p>.</p></div>
+
+  <!-- text and animation container -->
+  <a id="toFeedback"href="feedback.html"><p>Share your thoughts<p></a>
+  <div class="banner-container">
+    <div class="perlin-gallery">
+      <script src="perlin-gallery.js"></script>
+    </div>
+    <div class="banner">
+
+      <div class="surveyTitle">
+  <!-- Each time user moves onto a new question, the AI's dialogue changes to reflect the question -->
+        <h2 class="aiText" id="aiVideoTitle">Welcome to the stories gallery. </h2>
+        <p class="aiText" id="aiVideoSubtitle"> Click on the AI on right to go back and explore a different path. </p>
+      </div>
+
+          <a id="back"href="../survey1.html" >
+            <image src="ai.gif" alt="Back to Start" id="button">
+          </a>
+
+      <div class="surveyTitle"id="stretcher"><p>__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________</p> </div>
+    </div>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="grid-container">
+    <div class="grid-item">
+      <iframe title="vimeo-player" src="https://player.vimeo.com/video/338140872" width="auto" height="auto" align="middle" frameborder="0" allowfullscreen></iframe>
+      <h4> Do we trust robot cars? </h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338141922" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> Learning Around the Algorithms </h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338141895" class="vid" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> Preserving Unions </h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338142011" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> Environmental Solutions: Privatized </h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338141985" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> Data Privacy is still a problem? </h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338141952" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> Libraries: Retraining Sanctuary </h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338141973" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> Hitting Earth's Tipping Point</h4>
+    </div>
+
+    <div class="grid-item">
+      <iframe src="https://player.vimeo.com/video/338141913" width="auto" height="auto" align="middle" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+      <h4> The A.I. Training Industry </h4>
+    </div>
+
+    <div class="grid-item">
+      <image id="influencer"src="influencer.jpg" width="280px"> </image>
+      <h4  id="comingSoon"> Computerized Influencers <br>(Coming soon) </h4>
+    </div>
+  </div>
+
+
+    <script src="dialogue.js"></script>
+    <!-- Script to calculate total counter -->
+    <script src="score.js"></script>
+
+
+
+  </div>
+</body>
+
+</html>

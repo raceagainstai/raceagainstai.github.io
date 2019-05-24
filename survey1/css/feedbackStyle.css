@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "SuisseWorks-Regular";
+  src:url("fonts/SuisseWorks-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SuisseWorks-Medium";
+  src:url("fonts/SuisseWorks-Medium.otf") format("opentype");
+}
+
+@font-face{
+  font-family: "PT Serif";
+  src:url("https://fonts.googleapis.com/css?family=PT+Serif");
+}
+/* Scroll bar */
+  /* width */
+  ::-webkit-scrollbar {width: 0.75vw;}
+  /* Track */
+  ::-webkit-scrollbar-track {background: #F9F9F9;}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {background: #333;}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {background: #0065FF;}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* change color to F9F9F9 */
+  overflow: hidden;
+  font-family: "PT Serif", serif;
+}
+
+h1  {
+  font-family: "SuisseWorks-Regular", serif;
+  color: #F9F9F9;
+  font-size: 5.0vh;
+}
+h2  {
+  font-family: "SuisseWorks-Regular", serif;
+  color: #F9F9F9;
+  font-size: 3vh;
+}
+/*********************PAGE TOP**************************/
+.banner-container{ margin-top: -32px;}
+.banner {
+  position: fixed;
+  left: 33vw;
+  top: 3vh;
+  width: 50vw;
+  height: 20vh;
+
+  text-align: left;
+}
+.aiText{
+}
+.feedbackTitle {width: 40vw;}
+#back{
+  position: fixed;
+  right:0;
+  top:0;
+  margin-right: 18vw;
+  margin-top: 5vh;
+  width: 100px;
+  height:auto;
+  background-color: #000000;
+}
+#goBack{
+  width:100px;
+  height: auto;
+}
+/***********************UserInput***************************/
+.top-gradient{
+  position:fixed;
+  z-index: 99;
+  width:100%;
+  color:rgba(0,0,0,0);
+  height:5vh;
+  margin-top: 1vh;
+  font-size: 0.01vh;
+  border-top: thin solid white;
+  background-image: linear-gradient(#000000, rgba(0,0,0,1), rgba(0,0,0,0.65),rgba(0,0,0,0));
+}
+
+/* Placeholder pre-input color */
+  ::-webkit-input-placeholder {color: #999;}
+  ::-moz-placeholder {color: #999;}
+  :-ms-input-placeholder {color: #999;}
+  :-moz-placeholder {color: #999;}
+
+
+input:focus {color: #0065FF;} /*blue*/
+.blueText {color:#0065FF;} /*blue*/
+
+.inputContainer{
+  font-size: 4vh;
+}
+#userInput{
+  position: fixed;
+  width: 60vw;
+  left: 20vw;
+  margin-top: 3.5vh;
+  font-size: 4vh;
+  color: #F9F9F9;
+  justify-content: center;
+  font: inherit;
+  border-bottom: thin solid #0065FF;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-radius: 5px;
+  background-color: rgba(5,5,5,10);
+  padding: 15px;
+}
+#submit {
+  position: fixed;
+  left: 20vw;
+  margin-top: 20vh;
+  background-color: #000000;
+  color: #0065FF;
+  font-family: "SuisseWorks-Regular";
+  font-size: 2vh;
+  border: thin solid #0065FF;
+  padding: 1.5vh 2vw;
+  min-width: 20.35vw;
+}
+/***********************Existing Feedback***************************/
+#feedbackSection {
+  position: fixed;
+  overflow: auto;
+  bottom: 8.5vh;
+  left: 20vw;
+  bottom: 5vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 62.5vw;
+  height: 50vh;
+  grid-gap: 1.75vh;
+}
+#otherFeedback {
+  font-style: inherit;
+  color: #f9f9f9;
+  font-size: 2vh;
+  padding: 1vh 1vw;
+  height: auto;
+  background-color: #000000;
+  border: thin solid #0065FF;
+}

@@ -1,0 +1,156 @@
+@font-face {
+  font-family: "SuisseWorks-Regular";
+  src:url("fonts/SuisseWorks-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SuisseWorks-Medium";
+  src:url("fonts/SuisseWorks-Medium.otf") format("opentype");
+}
+
+@font-face{
+  font-family: "PT Serif";
+  src:url("https://fonts.googleapis.com/css?family=PT+Serif");
+}
+/* Scroll bar */
+  /* width */
+  ::-webkit-scrollbar {width: 0.75vw;}
+  /* Track */
+  ::-webkit-scrollbar-track {background: #F9F9F9;}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {background: #333;}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {background: #0065FF;}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #F9F9F9; /* change color to F9F9F9 */
+  overflow: hidden;
+  font-family: "PT Serif", serif;
+}
+
+h1  {
+  font-family: "SuisseWorks-Regular", serif;
+  color: #333;
+  font-size: 5.0vh;
+}
+h2  {
+  font-family: "SuisseWorks-Regular", serif;
+  color: #333;
+  font-size: 3.8vh;
+}
+/*********************PAGE TOP**************************/
+.back {
+  position: fixed;
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0),rgba(0,0,0,0),rgba(255,255,255,0), #F9F9F9);
+  height:21vh;
+  width: 100vw;
+  padding:auto;
+  color: rgba(0,0,0,0);
+  border-bottom: 2px solid #EAEAEA;
+  z-index: 10;
+}
+.banner-container {padding-top: 2vh;}
+
+.banner {
+  position: fixed;
+  width: 100vw;
+  height: 20vh;
+  padding: 0 32.5vw 0 32.5vw;
+  text-align: left;
+}
+
+.surveyTitle {width: 40vw;}
+/***********************SURVEY***************************/
+.top-gradient{
+  position:fixed;
+  z-index: 99;
+  width:100%;
+  color:rgba(0,0,0,0);
+  height:10vh;
+  font-size: 0.01vh;
+  background-image: linear-gradient(#F9F9F9, rgba(249,249,249,1), rgba(249,249,249,0.65),rgba(255,0,0,0));
+}
+.survey {
+  position: fixed;
+  top:21vh;
+  left:25vw;
+  z-index: 0;
+  width: 55vw;
+  height:80vh;
+  margin: auto;
+  padding:0 3vw;
+  font-family: "SuisseWorks-Medium", "PT Serif", serif;
+  font-size: 7vh;
+  color: #333;
+  overflow: scroll;
+}
+
+/* Placeholder pre-input color */
+  ::-webkit-input-placeholder {color: #999;}
+  ::-moz-placeholder {color: #999;}
+  :-ms-input-placeholder {color: #999;}
+  :-moz-placeholder {color: #999;}
+/* Number input width */
+input[type=number]{width:5vw;}
+
+/* Input and Select Text colors */
+select {color: #999;} /*gray*/
+select:focus, input:focus {color: #0065FF;} /*blue*/
+.blueText {color:#0065FF;} /*blue*/
+
+/* Hide dropdown arrow */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  overflow:hidden;
+  background: url("data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0Ljk1IDEwIj48ZGVmcz48c3R5bGU+LmNscy0xe2ZpbGw6I2ZmZjt9LmNscy0ye2ZpbGw6IzQ0NDt9PC9zdHlsZT48L2RlZnM+PHRpdGxlPmFycm93czwvdGl0bGU+PHJlY3QgY2xhc3M9ImNscy0xIiB3aWR0aD0iNC45NSIgaGVpZ2h0PSIxMCIvPjxwb2x5Z29uIGNsYXNzPSJjbHMtMiIgcG9pbnRzPSIxLjQxIDQuNjcgMi40OCAzLjE4IDMuNTQgNC42NyAxLjQxIDQuNjciLz48cG9seWdvbiBjbGFzcz0iY2xzLTIiIHBvaW50cz0iMy41NCA1LjMzIDIuNDggNi44MiAxLjQxIDUuMzMgMy41NCA1LjMzIi8+PC9zdmc+") no-repeat 100% 10% #f9f9f9;
+}
+/* Survey Questions*/
+select, input {
+  display: inline-block;
+  font: inherit;
+  border-style: none;
+  background-color: rgba(0,0,0,0);
+}
+#hidden-select{display:none;}
+
+.aiText {display:none;}
+#aiName {display:inline-block;}
+#warning {display:none;}
+ .age {display: none;}
+ .marriage {display:none; width: auto;}
+ .industries {display:none;}
+ .society {display:none;}
+ .society {display:none;}
+ .affect {display:none;}
+ .trust {display:none;}
+ .interest {display:none;}
+
+ /* button */
+ .bttn{
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   margin-bottom: 10vh;
+ }
+ #nextPage {
+   display:none;
+   /* display:block; */
+   text-align:center;
+   width: 15vw;
+   height:8vh;
+   font-family: "SuisseWorks-Regular", serif;
+   font-size: 4vh;
+   background-color: #F9F9F9;
+   border-style: solid;
+   border-width: 2px;
+   border-color: #000000;
+ }
+ #nextPage:hover {
+   color: rgba(255,255,255,1);
+   background-color: rgba(0,0,0,0.75);
+ }

@@ -1,0 +1,104 @@
+@font-face {
+  font-family: "SuisseWorks-Regular";
+  src:url("fonts/SuisseWorks-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "SuisseWorks-Medium";
+  src:url("fonts/SuisseWorks-Medium.otf") format("opentype");
+}
+
+@font-face{
+  font-family: "PT Serif";
+  src:url("https://fonts.googleapis.com/css?family=PT+Serif");
+}
+/* Scroll bar */
+  /* width */
+  ::-webkit-scrollbar {width: 0.75vw;}
+  /* Track */
+  ::-webkit-scrollbar-track {background: #F9F9F9;}
+  /* Handle */
+  ::-webkit-scrollbar-thumb {background: #333;}
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {background: #0065FF;}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #000000; /* change color to F9F9F9 */
+  overflow: hidden;
+  font-family: "PT Serif", serif;
+}
+h2{
+  font-family: "SuisseWorks-Regular", serif;
+  color: #333333;
+  font-size: 3.8vh;
+}
+/*********************PAGE TOP**************************/
+
+.banner-container {padding-top: 2vh;}
+
+.banner {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  left: 23vw;
+  width: 50vw;
+  height: 7.5vh;
+  padding: 0;
+  text-align: left;
+  background-color: #000000;
+  color: #F9F9F9;
+}
+.perlin-video{
+  margin-top: -55px;
+}
+#aiVideoTitle {
+  width: 55vw;
+  font-size: 2.5vh;
+  text-align: center;
+  color: #F9F9F9;
+  margin-top: 3vh;
+}
+#stretcher {
+  width:100vw;
+  height:1vh;
+  margin-left: -25vw;
+  border: 3px;
+  border-color: #666666;
+  color: #666666;
+}
+/*********************Video**************************/
+.videoContainer {
+  /* position: fixed; */
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+  /* left:5vw; */
+}
+/*********************PAGE BOTTOM**************************/
+.footer {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* justify-content: space-around; */
+  bottom:0;
+  /* left: 15vw; */
+  width: 100vw;
+  height: 10vh;
+  text-align: center;
+}
+#aiVideoSubtitle {
+  font-size: 2vh;
+  font-family: "SuisseWorks-Medium";
+  color: #F9F9F9;
+  border: thin solid #0064FF;
+  margin: 3vh 10vw 0vh 10vw;
+  padding: 1vh 2vw;
+  height: 3vh;
+
+}
+a {
+  color: #0064FF;
+  text-decoration: none;
+}

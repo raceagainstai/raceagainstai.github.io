@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Race Against the AI</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.8.0/p5.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/102/three.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/bowser/1.9.4/bowser.min.js'></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+  <!-- title -->
+  <div class="landingTitle">
+    <h1>What is your world like in 2029?</h1>
+  </div>
+
+  <!-- donut animation  -->
+  <div class="animation">
+    <div>
+      <script src="js/perlin.js"></script>
+    </div>
+  </div>
+  <!-- Slideshow container -->
+  <div class="slideshow-container">
+
+    <div class="slide">
+      <!-- <div class="numbertext">3 / 3</div> -->
+      <q class="slide-q">Let's begin?</q>
+    </div>
+
+    <div class="slide">
+        <q class="slide-q"> Hi there. Welcome to Race Against The AI.</q>
+    </div>
+
+    <div class="slide">
+        <q class="slide-q"> I can predict your 2029, but you&#x27;ll have to help me understand a little about who you are.</q>
+    </div>
+
+    <div class="slide">
+        <q class="slide-q"> I want to ask a few basic questions about your work and your opinions on AI and automation.</q>
+    </div>
+
+    <!-- <div class="slide">
+        <q class="slide-q">You may choose to skip any question, but your experience will be less individualized.</q>
+    </div> -->
+
+    <div class="slide">
+      <q class="slide-q">All data collected here is used only in the exhibit and will not live beyond this experience.</q>
+    </div>
+
+  </div>
+  <br>
+
+  <!-- The dots/circles -->
+  <!-- <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+    <span class="dot" onclick="currentSlide(4)"></span>
+  </div> -->
+
+<!--                     on-load animation                     -->
+  <script>
+  $(document).ready(function () {
+        // Hide the divs
+        $(".landingTitle").animate({opacity: 0}, 5);
+        $(".slideshow-container").hide();
+        $(".button").hide();
+        // Show the divs
+        $(".landingTitle").delay(2000).fadeIn(400);
+        $(".slideshow-container").delay(5500).fadeIn(450);
+        $(".landingTitle").animate({opacity: 1.0});
+        $(".button").delay(12000).fadeIn(500);
+
+
+  });
+  </script>
+<!--                     quote slide animation                 -->
+  <script>
+  var slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("slide");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 5500); // Change image every 5.5 seconds
+
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+  <div class="button-container">
+    <div class="button">
+      <a href="file:///C:\Users\will\Desktop\RAAI\survey1\survey1.html">Enter</a>
+    </div>
+  </div>
+</body>
+
+</html>
